@@ -1,4 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import HistoricalUfcRankings from "./HistoricalUfcRankings";
+import rankings_history from "../data/rankings_history.js";
 
-ReactDOM.render(<div>fdsa</div>, document.getElementById('root'));
+ReactDOM.render(
+    <HistoricalUfcRankings rankings_history={rankings_history} />,
+    document.getElementById("root")
+);
