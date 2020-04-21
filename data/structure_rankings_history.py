@@ -43,9 +43,8 @@ for line in lines:
 print("Parsed data into {} records".format(len(rankings_history)))
 
 # Output structured dict as json into file
-file = open("rankings_history.js", "w")
+file = open("rankings_history.json", "w")
 s = json.dumps(rankings_history, indent=4)
-s = "const rankings_history = " + s + ";\n\nexport default rankings_history;"
 file.write(s)
 
-print("Output to rankings_history.js")
+print("Output to rankings_history.json")

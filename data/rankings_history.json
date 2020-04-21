@@ -1,4 +1,4 @@
-const rankings_history = {
+{
     "2013-02-04": {
         "Pound-for-Pound": [
             {
@@ -161443,6 +161443,4 @@ const rankings_history = {
             }
         ]
     }
-};
-
-export default rankings_history;
+}
