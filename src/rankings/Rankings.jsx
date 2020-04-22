@@ -1,14 +1,31 @@
 import React from "react";
+import Division from "../division/Division";
+import "./Rankings.sass";
 
 class Rankings extends React.Component {
     render = () => {
+        const { divisions, date } = this.props;
+        const dateString = new Date(date).toDateString();
+
         return (
-            <div>
-                {this.props.date}
-                <table>
-                    <tbody>
-                        <tr>
-                            {Object.keys(this.props.divisions).map(
+            <>
+                <h1 className="date">{dateString}</h1>
+                <div className="rankings">
+                    {Object.keys(divisions).map((division) => (
+                        <Division
+                            title={division}
+                            rankings={divisions[division]}
+                        />
+                    ))}
+                </div>
+            </>
+        );
+    };
+}
+
+export default Rankings;
+
+/*
                                 (weightClass) => (
                                     <td key={weightClass}>
                                         {weightClass}
@@ -20,14 +37,4 @@ class Rankings extends React.Component {
                                             )
                                         )}
                                     </td>
-                                )
-                            )}
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        );
-    };
-}
-
-export default Rankings;
+                                )*/

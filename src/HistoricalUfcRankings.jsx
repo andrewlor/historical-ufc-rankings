@@ -1,5 +1,5 @@
 import React from "react";
-import Rankings from "./Rankings.jsx";
+import Rankings from "./rankings/Rankings.jsx";
 
 class HistoricalUfcRankings extends React.Component {
     state = {
@@ -11,12 +11,12 @@ class HistoricalUfcRankings extends React.Component {
             const maxIdx = Object.keys(this.props.rankings_history).length - 1;
 
             switch (event.keyCode) {
-                case 40:
+                case 83:
                     this.setState((state) => ({
                         index: Math.min(state.index + 1, maxIdx),
                     }));
                     break;
-                case 38:
+                case 87:
                     this.setState((state) => ({
                         index: Math.max(state.index - 1, 0),
                     }));
