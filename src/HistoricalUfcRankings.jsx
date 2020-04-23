@@ -1,40 +1,57 @@
 import React from "react";
-import Rankings from "./rankings/Rankings.jsx";
+import Timeline from "./timeline/Timeline";
+import Rankings from "./rankings/Rankings";
 
 class HistoricalUfcRankings extends React.Component {
-    state = {
-        index: 0,
+    constructor(props) {
+        super(props);
+        this.state = {
+            index: Object.keys(props.rankings_history).length - 1,
+        };
+    }
+
+    componentDidMount = () => {
+        window.addEventListener("keydown", this.handleKeyDown);
     };
 
-    componentDidMount() {
-        window.addEventListener("keydown", (event) => {
-            const maxIdx = Object.keys(this.props.rankings_history).length - 1;
+    componentWillUnmount = () => {
+        window.removeEventListener("keydown", this.handleKeyDown);
+    };
 
-            switch (event.keyCode) {
-                case 83:
-                    this.setState((state) => ({
-                        index: Math.min(state.index + 1, maxIdx),
-                    }));
-                    break;
-                case 87:
-                    this.setState((state) => ({
-                        index: Math.max(state.index - 1, 0),
-                    }));
-                    break;
-            }
-        });
-    }
+    handleKeyDown = (event) => {
+        const maxIdx = Object.keys(this.props.rankings_history).length - 1;
+
+        switch (event.keyCode) {
+            case 87: // W
+                this.setState((state) => ({
+                    index: Math.min(state.index + 1, maxIdx),
+                }));
+                break;
+            case 83: // S
+                this.setState((state) => ({
+                    index: Math.max(state.index - 1, 0),
+                }));
+                break;
+        }
+    };
 
     render = () => {
         const { rankings_history } = this.props;
-        const date = Object.keys(rankings_history)[this.state.index];
+        const { index } = this.state;
+        const dates = Object.keys(rankings_history);
+        const date = Object.keys(rankings_history)[index];
 
         return (
-            <Rankings
-                key={date}
-                date={date}
-                divisions={rankings_history[date]}
-            />
+            <>
+                <Timeline
+                    dates={dates}
+                    index={index}
+                    updateIndex={(index) => {
+                        this.setState({ index: index });
+                    }}
+                />
+                <Rankings date={date} divisions={rankings_history[date]} />
+            </>
         );
     };
 }

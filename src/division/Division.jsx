@@ -9,7 +9,7 @@ class Division extends React.Component {
             <div className="division">
                 <p className="title">{title}</p>
                 {rankings.map(({ rank, fighter }) => (
-                    <p className="rank">
+                    <p className="rank" key={fighter}>
                         {rank == 0 ? "C" : rank} {fighter}
                     </p>
                 ))}

@@ -13,6 +13,7 @@ class Rankings extends React.Component {
                 <div className="rankings">
                     {Object.keys(divisions).map((division) => (
                         <Division
+                            key={division}
                             title={division}
                             rankings={divisions[division]}
                         />
