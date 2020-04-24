@@ -5,46 +5,34 @@ import "./Timeline.sass";
 class Timeline extends React.Component {
     state = {
         mousedown: false,
+        hoverDateLabelIndex: -1,
     };
 
     constructor(props) {
         super(props);
-        this.dateLabelRef = React.createRef();
+        this.hoverDateLabelRef = React.createRef();
+        this.dateContainerRef = React.createRef();
+        this.hoverDateContainerRef = React.createRef();
         this.timelimeRef = React.createRef();
     }
 
     componentDidMount = () => {
-        this.timelimeRef.current.addEventListener(
-            "mousedown",
-            ({ clientY }) => {
-                this.adjustPosition(clientY);
-                this.setState({ mousedown: true });
-            }
-        );
-
-        this.timelimeRef.current.addEventListener("mouseup", () => {
-            this.setState({ mousedown: false });
+        this.timelimeRef.current.addEventListener("mousedown", ({ clientY }) => {
+            this.updateDateLabelIndex(clientY);
+            this.setState({ mousedown: true });
         });
 
+        this.timelimeRef.current.addEventListener("mouseup", this.setMouseDownFalse);
         this.timelimeRef.current.addEventListener("mouseleave", () => {
-            this.setState({ mousedown: false });
+            this.setMouseDownFalse();
+            this.hideHoverDateLabel();
         });
+        this.timelimeRef.current.addEventListener("mouseenter", this.showHoverDateLabel);
 
-        this.timelimeRef.current.addEventListener(
-            "mousemove",
-            ({ clientY }) => {
-                if (this.state.mousedown) this.adjustPosition(clientY);
-            }
-        );
-    };
-
-    adjustPosition = (position) => {
-        const length = this.props.dates.length - 1;
-        const relativeYPositionPercentage =
-            1 - position / this.timelimeRef.current.clientHeight;
-
-        const newIndex = Math.round(relativeYPositionPercentage * length);
-        this.props.updateIndex(newIndex);
+        this.timelimeRef.current.addEventListener("mousemove", ({ clientY }) => {
+            if (this.state.mousedown) this.updateDateLabelIndex(clientY);
+            this.updateHoverDateLabel(clientY);
+        });
     };
 
     componentDidUpdate = (prevProps) => {
@@ -53,18 +41,59 @@ class Timeline extends React.Component {
         }
     };
 
+    setMouseDownFalse = () => this.setState({ mousedown: false });
+
+    hideHoverDateLabel = () => {
+        this.hoverDateLabelRef.current.style.left = "-200%";
+    };
+
+    showHoverDateLabel = () => {
+        this.hoverDateLabelRef.current.style.left = "0%";
+    };
+
+    updateDateLabelIndex = (yPosition) => this.props.updateIndex(this.calculateIndex(yPosition));
+
+    updateHoverDateLabel = (yPosition) => {
+        const index = this.calculateIndex(yPosition);
+
+        this.hoverDateContainerRef.current.style.top = `${this.getRelativePositionPercentage(
+            index
+        )}%`;
+
+        this.setState({ hoverDateLabelIndex: index });
+    };
+
+    calculateIndex = (yPosition) => {
+        const length = this.props.dates.length - 1;
+        const relativeYPositionPercentage = 1 - yPosition / this.timelimeRef.current.clientHeight;
+
+        return Math.min(Math.round(relativeYPositionPercentage * length), length);
+    };
+
     updateDateLabelPosition = () => {
-        const { dates, index } = this.props;
+        const { index } = this.props;
+        this.dateContainerRef.current.style.top = `${this.getRelativePositionPercentage(index)}%`;
+    };
+
+    getRelativePositionPercentage = (index) => {
+        const { dates } = this.props;
         const length = dates.length - 1;
-        const relativePostionPercentage = ((length - index) / length) * 100;
-        this.dateLabelRef.current.style.top = `${relativePostionPercentage}%`;
+        return ((length - index) / length) * 100;
     };
 
     render = () => {
         const { dates, index } = this.props;
+        const { hoverDateLabelIndex } = this.state;
         return (
             <div ref={this.timelimeRef} className="timeline">
-                <p ref={this.dateLabelRef}>{dates[index]}</p>
+                <div ref={this.dateContainerRef} className="dateLabel">
+                    <p>{dates[index]}</p>
+                </div>
+                <div ref={this.hoverDateContainerRef} className="dateLabel hover">
+                    <p ref={this.hoverDateLabelRef}>
+                        {hoverDateLabelIndex >= 0 ? dates[hoverDateLabelIndex] : null}
+                    </p>
+                </div>
             </div>
         );
     };
