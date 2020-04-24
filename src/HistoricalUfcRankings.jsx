@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Timeline from "./timeline/Timeline";
 import Rankings from "./rankings/Rankings";
 
@@ -12,10 +13,6 @@ class HistoricalUfcRankings extends React.Component {
 
     componentDidMount = () => {
         window.addEventListener("keydown", this.handleKeyDown);
-    };
-
-    componentWillUnmount = () => {
-        window.removeEventListener("keydown", this.handleKeyDown);
     };
 
     handleKeyDown = (event) => {
@@ -55,5 +52,9 @@ class HistoricalUfcRankings extends React.Component {
         );
     };
 }
+
+HistoricalUfcRankings.propTypes = {
+    rankings_history: PropTypes.object.isRequired,
+};
 
 export default HistoricalUfcRankings;

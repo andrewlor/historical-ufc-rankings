@@ -67,7 +67,7 @@ class Timeline extends React.Component {
         const length = this.props.dates.length - 1;
         const relativeYPositionPercentage = 1 - yPosition / this.timelimeRef.current.clientHeight;
 
-        return Math.min(Math.round(relativeYPositionPercentage * length), length);
+        return Math.round(relativeYPositionPercentage * length);
     };
 
     updateDateLabelPosition = () => {
