@@ -1,5 +1,4 @@
 .division
-    border: 1px solid black
     display: flex
     flex-direction: column
     width: 20vw
@@ -7,10 +6,32 @@
 
     .title
         text-align: center
+        color: red
+        font-weight: 500
+        text-transform: uppercase
+        margin: 0
 
     .rank
         display: block
         margin: 10px
+
+        &.champ
+            text-align: center
+            text-transform: uppercase
+
+            a
+                font-weight: 500
+
+            p
+                margin: 0
+                font-size: 12px
+
+        .bold
+            font-weight: 500
+
+        a
+            text-decoration: none
+            color: black
 
 .division::-webkit-scrollbar
     display: none

@@ -7,17 +7,20 @@ const athleteUrl = (fighter) => {
     return `https://www.ufc.com/athlete/${fighterNameUrl}`;
 };
 
+const isChamp = (rank) => rank == 0;
+
 const Division = React.memo(({ title, rankings }) => {
     return (
         <div className="division">
             <p className="title">{title}</p>
             {rankings.map(({ rank, fighter }) => (
-                <p className="rank" key={fighter}>
-                    {rank == 0 ? "C" : rank}{" "}
+                <div className={`rank ${rank == 0 ? "champ" : ""}`} key={fighter}>
+                    {!isChamp(rank) ? <span className="bold">{rank} </span> : null}
                     <a href={athleteUrl(fighter)} target="_blank">
                         {fighter}
                     </a>
-                </p>
+                    {isChamp(rank) ? <p>Champion</p> : null}
+                </div>
             ))}
         </div>
     );
