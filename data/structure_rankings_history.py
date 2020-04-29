@@ -42,6 +42,28 @@ for line in lines:
 
 print("Parsed data into {} records".format(len(rankings_history)))
 
+for date in rankings_history:
+    for weight_class in rankings_history[date]:
+        ranks = list(map(lambda rank: rank["rank"], rankings_history[date][weight_class]))
+        if len(ranks) / 2 == len(list(dict.fromkeys(ranks))):
+            print(f"Splitting {date} {weight_class} into male and female")
+            division = rankings_history[date][weight_class]
+            del rankings_history[date][weight_class]
+
+            mens_weight_class = f"Men's {weight_class}"
+            womens_weight_class = f"Women's {weight_class}"
+
+            rankings_history[date][mens_weight_class] = []
+            rankings_history[date][womens_weight_class] = []
+
+            for i in range(len(ranks)):
+                if i % 2 == 0:
+                    rankings_history[date][mens_weight_class].append(division[i])
+                else:
+                    rankings_history[date][womens_weight_class].append(division[i])
+
+            break
+
 # Output structured dict as json into file
 file = open("rankings_history.json", "w")
 s = json.dumps(rankings_history, indent=4)

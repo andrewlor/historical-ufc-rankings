@@ -155456,128 +155456,6 @@
         ]
     },
     "2020-01-27": {
-        "Pound-for-Pound": [
-            {
-                "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
-                "rank": 1
-            },
-            {
-                "fighter": "Khabib Nurmagomedov",
-                "rank": 2
-            },
-            {
-                "fighter": "Valentina Shevchenko",
-                "rank": 2
-            },
-            {
-                "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Weili Zhang",
-                "rank": 3
-            },
-            {
-                "fighter": "Stipe Miocic",
-                "rank": 4
-            },
-            {
-                "fighter": "Jessica Andrade",
-                "rank": 4
-            },
-            {
-                "fighter": "Daniel Cormier",
-                "rank": 5
-            },
-            {
-                "fighter": "Rose Namajunas",
-                "rank": 5
-            },
-            {
-                "fighter": "Israel Adesanya",
-                "rank": 6
-            },
-            {
-                "fighter": "Joanna Jedrzejczyk",
-                "rank": 6
-            },
-            {
-                "fighter": "Kamaru Usman",
-                "rank": 7
-            },
-            {
-                "fighter": "Holly Holm",
-                "rank": 7
-            },
-            {
-                "fighter": "Alexander Volkanovski",
-                "rank": 8
-            },
-            {
-                "fighter": "Germaine de Randamie",
-                "rank": 8
-            },
-            {
-                "fighter": "Conor McGregor",
-                "rank": 9
-            },
-            {
-                "fighter": "Tatiana Suarez",
-                "rank": 9
-            },
-            {
-                "fighter": "Tony Ferguson",
-                "rank": 10
-            },
-            {
-                "fighter": "Katlyn Chookagian",
-                "rank": 10
-            },
-            {
-                "fighter": "Max Holloway",
-                "rank": 11
-            },
-            {
-                "fighter": "Aspen Ladd",
-                "rank": 11
-            },
-            {
-                "fighter": "Dustin Poirier",
-                "rank": 12
-            },
-            {
-                "fighter": "Jessica Eye",
-                "rank": 12
-            },
-            {
-                "fighter": "Tyron Woodley",
-                "rank": 13
-            },
-            {
-                "fighter": "Julianna Pe\u00f1a",
-                "rank": 13
-            },
-            {
-                "fighter": "Robert Whittaker",
-                "rank": 14
-            },
-            {
-                "fighter": "Claudia Gadelha",
-                "rank": 14
-            },
-            {
-                "fighter": "Jorge Masvidal",
-                "rank": 15
-            },
-            {
-                "fighter": "Nina Ansaroff",
-                "rank": 15
-            }
-        ],
         "Flyweight": [
             {
                 "fighter": "Henry Cejudo",
@@ -156305,16 +156183,10 @@
                 "fighter": "Amanda Nunes",
                 "rank": 0
             }
-        ]
-    },
-    "2020-02-10": {
-        "Pound-for-Pound": [
+        ],
+        "Men's Pound-for-Pound": [
             {
                 "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
                 "rank": 1
             },
             {
@@ -156322,15 +156194,7 @@
                 "rank": 2
             },
             {
-                "fighter": "Valentina Shevchenko",
-                "rank": 2
-            },
-            {
                 "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Weili Zhang",
                 "rank": 3
             },
             {
@@ -156338,15 +156202,7 @@
                 "rank": 4
             },
             {
-                "fighter": "Jessica Andrade",
-                "rank": 4
-            },
-            {
                 "fighter": "Daniel Cormier",
-                "rank": 5
-            },
-            {
-                "fighter": "Joanna Jedrzejczyk",
                 "rank": 5
             },
             {
@@ -156354,15 +156210,7 @@
                 "rank": 6
             },
             {
-                "fighter": "Rose Namajunas",
-                "rank": 6
-            },
-            {
                 "fighter": "Kamaru Usman",
-                "rank": 7
-            },
-            {
-                "fighter": "Holly Holm",
                 "rank": 7
             },
             {
@@ -156370,15 +156218,7 @@
                 "rank": 8
             },
             {
-                "fighter": "Tatiana Suarez",
-                "rank": 8
-            },
-            {
                 "fighter": "Conor McGregor",
-                "rank": 9
-            },
-            {
-                "fighter": "Germaine de Randamie",
                 "rank": 9
             },
             {
@@ -156386,27 +156226,11 @@
                 "rank": 10
             },
             {
-                "fighter": "Aspen Ladd",
-                "rank": 10
-            },
-            {
                 "fighter": "Max Holloway",
                 "rank": 11
             },
             {
-                "fighter": "Katlyn Chookagian",
-                "rank": 11
-            },
-            {
                 "fighter": "Dustin Poirier",
-                "rank": 12
-            },
-            {
-                "fighter": "Jessica Eye",
-                "rank": 12
-            },
-            {
-                "fighter": "Julianna Pe\u00f1a",
                 "rank": 12
             },
             {
@@ -156418,18 +156242,74 @@
                 "rank": 14
             },
             {
-                "fighter": "Claudia Gadelha",
-                "rank": 14
+                "fighter": "Jorge Masvidal",
+                "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
             },
             {
-                "fighter": "Dominick Reyes",
-                "rank": 15
+                "fighter": "Valentina Shevchenko",
+                "rank": 2
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 5
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 6
+            },
+            {
+                "fighter": "Holly Holm",
+                "rank": 7
+            },
+            {
+                "fighter": "Germaine de Randamie",
+                "rank": 8
+            },
+            {
+                "fighter": "Tatiana Suarez",
+                "rank": 9
+            },
+            {
+                "fighter": "Katlyn Chookagian",
+                "rank": 10
+            },
+            {
+                "fighter": "Aspen Ladd",
+                "rank": 11
+            },
+            {
+                "fighter": "Jessica Eye",
+                "rank": 12
+            },
+            {
+                "fighter": "Julianna Pe\u00f1a",
+                "rank": 13
+            },
+            {
+                "fighter": "Claudia Gadelha",
+                "rank": 14
             },
             {
                 "fighter": "Nina Ansaroff",
                 "rank": 15
             }
-        ],
+        ]
+    },
+    "2020-02-10": {
         "Flyweight": [
             {
                 "fighter": "Henry Cejudo",
@@ -157157,16 +157037,10 @@
                 "fighter": "Amanda Nunes",
                 "rank": 0
             }
-        ]
-    },
-    "2020-02-17": {
-        "Pound-for-Pound": [
+        ],
+        "Men's Pound-for-Pound": [
             {
                 "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
                 "rank": 1
             },
             {
@@ -157174,15 +157048,7 @@
                 "rank": 2
             },
             {
-                "fighter": "Valentina Shevchenko",
-                "rank": 2
-            },
-            {
                 "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Weili Zhang",
                 "rank": 3
             },
             {
@@ -157190,15 +157056,7 @@
                 "rank": 4
             },
             {
-                "fighter": "Jessica Andrade",
-                "rank": 4
-            },
-            {
                 "fighter": "Daniel Cormier",
-                "rank": 5
-            },
-            {
-                "fighter": "Joanna Jedrzejczyk",
                 "rank": 5
             },
             {
@@ -157206,19 +157064,7 @@
                 "rank": 6
             },
             {
-                "fighter": "Rose Namajunas",
-                "rank": 6
-            },
-            {
                 "fighter": "Kamaru Usman",
-                "rank": 7
-            },
-            {
-                "fighter": "Holly Holm",
-                "rank": 7
-            },
-            {
-                "fighter": "Tatiana Suarez",
                 "rank": 7
             },
             {
@@ -157230,15 +157076,7 @@
                 "rank": 9
             },
             {
-                "fighter": "Germaine de Randamie",
-                "rank": 9
-            },
-            {
                 "fighter": "Tony Ferguson",
-                "rank": 10
-            },
-            {
-                "fighter": "Aspen Ladd",
                 "rank": 10
             },
             {
@@ -157246,12 +157084,66 @@
                 "rank": 11
             },
             {
-                "fighter": "Katlyn Chookagian",
-                "rank": 11
-            },
-            {
                 "fighter": "Dustin Poirier",
                 "rank": 12
+            },
+            {
+                "fighter": "Julianna Pe\u00f1a",
+                "rank": 12
+            },
+            {
+                "fighter": "Robert Whittaker",
+                "rank": 14
+            },
+            {
+                "fighter": "Dominick Reyes",
+                "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
+            },
+            {
+                "fighter": "Valentina Shevchenko",
+                "rank": 2
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 5
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 6
+            },
+            {
+                "fighter": "Holly Holm",
+                "rank": 7
+            },
+            {
+                "fighter": "Tatiana Suarez",
+                "rank": 8
+            },
+            {
+                "fighter": "Germaine de Randamie",
+                "rank": 9
+            },
+            {
+                "fighter": "Aspen Ladd",
+                "rank": 10
+            },
+            {
+                "fighter": "Katlyn Chookagian",
+                "rank": 11
             },
             {
                 "fighter": "Jessica Eye",
@@ -157262,26 +157154,16 @@
                 "rank": 13
             },
             {
-                "fighter": "Julianna Pe\u00f1a",
-                "rank": 13
-            },
-            {
-                "fighter": "Robert Whittaker",
+                "fighter": "Claudia Gadelha",
                 "rank": 14
             },
             {
                 "fighter": "Nina Ansaroff",
-                "rank": 14
-            },
-            {
-                "fighter": "Dominick Reyes",
-                "rank": 15
-            },
-            {
-                "fighter": "Claudia Gadelha",
                 "rank": 15
             }
-        ],
+        ]
+    },
+    "2020-02-17": {
         "Flyweight": [
             {
                 "fighter": "Henry Cejudo",
@@ -158013,16 +157895,10 @@
                 "fighter": "Amanda Nunes",
                 "rank": 0
             }
-        ]
-    },
-    "2020-02-24": {
-        "Pound-for-Pound": [
+        ],
+        "Men's Pound-for-Pound": [
             {
                 "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
                 "rank": 1
             },
             {
@@ -158030,15 +157906,7 @@
                 "rank": 2
             },
             {
-                "fighter": "Valentina Shevchenko",
-                "rank": 2
-            },
-            {
                 "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Weili Zhang",
                 "rank": 3
             },
             {
@@ -158046,23 +157914,11 @@
                 "rank": 4
             },
             {
-                "fighter": "Jessica Andrade",
-                "rank": 4
-            },
-            {
                 "fighter": "Daniel Cormier",
                 "rank": 5
             },
             {
-                "fighter": "Joanna Jedrzejczyk",
-                "rank": 5
-            },
-            {
                 "fighter": "Israel Adesanya",
-                "rank": 6
-            },
-            {
-                "fighter": "Rose Namajunas",
                 "rank": 6
             },
             {
@@ -158074,6 +157930,60 @@
                 "rank": 7
             },
             {
+                "fighter": "Conor McGregor",
+                "rank": 9
+            },
+            {
+                "fighter": "Tony Ferguson",
+                "rank": 10
+            },
+            {
+                "fighter": "Max Holloway",
+                "rank": 11
+            },
+            {
+                "fighter": "Dustin Poirier",
+                "rank": 12
+            },
+            {
+                "fighter": "Tyron Woodley",
+                "rank": 13
+            },
+            {
+                "fighter": "Robert Whittaker",
+                "rank": 14
+            },
+            {
+                "fighter": "Dominick Reyes",
+                "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
+            },
+            {
+                "fighter": "Valentina Shevchenko",
+                "rank": 2
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 5
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 6
+            },
+            {
                 "fighter": "Holly Holm",
                 "rank": 7
             },
@@ -158082,62 +157992,36 @@
                 "rank": 8
             },
             {
-                "fighter": "Conor McGregor",
-                "rank": 9
-            },
-            {
                 "fighter": "Germaine de Randamie",
                 "rank": 9
-            },
-            {
-                "fighter": "Tony Ferguson",
-                "rank": 10
             },
             {
                 "fighter": "Aspen Ladd",
                 "rank": 10
             },
             {
-                "fighter": "Max Holloway",
-                "rank": 11
-            },
-            {
                 "fighter": "Katlyn Chookagian",
                 "rank": 11
-            },
-            {
-                "fighter": "Dustin Poirier",
-                "rank": 12
             },
             {
                 "fighter": "Jessica Eye",
                 "rank": 12
             },
             {
-                "fighter": "Tyron Woodley",
-                "rank": 13
-            },
-            {
                 "fighter": "Julianna Pe\u00f1a",
                 "rank": 13
-            },
-            {
-                "fighter": "Robert Whittaker",
-                "rank": 14
             },
             {
                 "fighter": "Nina Ansaroff",
                 "rank": 14
             },
             {
-                "fighter": "Dominick Reyes",
-                "rank": 15
-            },
-            {
                 "fighter": "Claudia Gadelha",
                 "rank": 15
             }
-        ],
+        ]
+    },
+    "2020-02-24": {
         "Flyweight": [
             {
                 "fighter": "Henry Cejudo",
@@ -158873,16 +158757,10 @@
                 "fighter": "Amanda Nunes",
                 "rank": 0
             }
-        ]
-    },
-    "2020-03-02": {
-        "Pound-for-Pound": [
+        ],
+        "Men's Pound-for-Pound": [
             {
                 "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
                 "rank": 1
             },
             {
@@ -158890,15 +158768,7 @@
                 "rank": 2
             },
             {
-                "fighter": "Valentina Shevchenko",
-                "rank": 2
-            },
-            {
                 "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Weili Zhang",
                 "rank": 3
             },
             {
@@ -158906,23 +158776,11 @@
                 "rank": 4
             },
             {
-                "fighter": "Jessica Andrade",
-                "rank": 4
-            },
-            {
                 "fighter": "Daniel Cormier",
                 "rank": 5
             },
             {
-                "fighter": "Joanna Jedrzejczyk",
-                "rank": 5
-            },
-            {
                 "fighter": "Israel Adesanya",
-                "rank": 6
-            },
-            {
-                "fighter": "Rose Namajunas",
                 "rank": 6
             },
             {
@@ -158934,6 +158792,60 @@
                 "rank": 7
             },
             {
+                "fighter": "Conor McGregor",
+                "rank": 9
+            },
+            {
+                "fighter": "Tony Ferguson",
+                "rank": 10
+            },
+            {
+                "fighter": "Max Holloway",
+                "rank": 11
+            },
+            {
+                "fighter": "Dustin Poirier",
+                "rank": 12
+            },
+            {
+                "fighter": "Tyron Woodley",
+                "rank": 13
+            },
+            {
+                "fighter": "Robert Whittaker",
+                "rank": 14
+            },
+            {
+                "fighter": "Dominick Reyes",
+                "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
+            },
+            {
+                "fighter": "Valentina Shevchenko",
+                "rank": 2
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 5
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 6
+            },
+            {
                 "fighter": "Tatiana Suarez",
                 "rank": 7
             },
@@ -158942,62 +158854,36 @@
                 "rank": 8
             },
             {
-                "fighter": "Conor McGregor",
-                "rank": 9
-            },
-            {
                 "fighter": "Germaine de Randamie",
                 "rank": 9
-            },
-            {
-                "fighter": "Tony Ferguson",
-                "rank": 10
             },
             {
                 "fighter": "Aspen Ladd",
                 "rank": 10
             },
             {
-                "fighter": "Max Holloway",
-                "rank": 11
-            },
-            {
                 "fighter": "Katlyn Chookagian",
                 "rank": 11
-            },
-            {
-                "fighter": "Dustin Poirier",
-                "rank": 12
             },
             {
                 "fighter": "Jessica Eye",
                 "rank": 12
             },
             {
-                "fighter": "Tyron Woodley",
-                "rank": 13
-            },
-            {
                 "fighter": "Julianna Pe\u00f1a",
                 "rank": 13
-            },
-            {
-                "fighter": "Robert Whittaker",
-                "rank": 14
             },
             {
                 "fighter": "Nina Ansaroff",
                 "rank": 14
             },
             {
-                "fighter": "Dominick Reyes",
-                "rank": 15
-            },
-            {
                 "fighter": "Claudia Gadelha",
                 "rank": 15
             }
-        ],
+        ]
+    },
+    "2020-03-02": {
         "Flyweight": [
             {
                 "fighter": "NA",
@@ -159729,16 +159615,10 @@
                 "fighter": "Amanda Nunes",
                 "rank": 0
             }
-        ]
-    },
-    "2020-03-09": {
-        "Pound-for-Pound": [
+        ],
+        "Men's Pound-for-Pound": [
             {
                 "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
                 "rank": 1
             },
             {
@@ -159746,15 +159626,7 @@
                 "rank": 2
             },
             {
-                "fighter": "Weili Zhang",
-                "rank": 2
-            },
-            {
                 "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Valentina Shevchenko",
                 "rank": 3
             },
             {
@@ -159762,23 +159634,11 @@
                 "rank": 4
             },
             {
-                "fighter": "Jessica Andrade",
-                "rank": 4
+                "fighter": "Daniel Cormier",
+                "rank": 5
             },
             {
                 "fighter": "Israel Adesanya",
-                "rank": 5
-            },
-            {
-                "fighter": "Joanna Jedrzejczyk",
-                "rank": 5
-            },
-            {
-                "fighter": "Daniel Cormier",
-                "rank": 6
-            },
-            {
-                "fighter": "Rose Namajunas",
                 "rank": 6
             },
             {
@@ -159790,19 +159650,7 @@
                 "rank": 7
             },
             {
-                "fighter": "Alexander Volkanovski",
-                "rank": 8
-            },
-            {
-                "fighter": "Holly Holm",
-                "rank": 8
-            },
-            {
                 "fighter": "Conor McGregor",
-                "rank": 9
-            },
-            {
-                "fighter": "Germaine de Randamie",
                 "rank": 9
             },
             {
@@ -159810,15 +159658,7 @@
                 "rank": 10
             },
             {
-                "fighter": "Aspen Ladd",
-                "rank": 10
-            },
-            {
                 "fighter": "Max Holloway",
-                "rank": 11
-            },
-            {
-                "fighter": "Katlyn Chookagian",
                 "rank": 11
             },
             {
@@ -159826,15 +159666,7 @@
                 "rank": 12
             },
             {
-                "fighter": "Jessica Eye",
-                "rank": 12
-            },
-            {
                 "fighter": "Tyron Woodley",
-                "rank": 13
-            },
-            {
-                "fighter": "Julianna Pe\u00f1a",
                 "rank": 13
             },
             {
@@ -159842,18 +159674,74 @@
                 "rank": 14
             },
             {
-                "fighter": "Nina Ansaroff",
-                "rank": 14
-            },
-            {
                 "fighter": "Dominick Reyes",
                 "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
+            },
+            {
+                "fighter": "Valentina Shevchenko",
+                "rank": 2
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 5
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 6
+            },
+            {
+                "fighter": "Holly Holm",
+                "rank": 7
+            },
+            {
+                "fighter": "Alexander Volkanovski",
+                "rank": 8
+            },
+            {
+                "fighter": "Germaine de Randamie",
+                "rank": 9
+            },
+            {
+                "fighter": "Aspen Ladd",
+                "rank": 10
+            },
+            {
+                "fighter": "Katlyn Chookagian",
+                "rank": 11
+            },
+            {
+                "fighter": "Jessica Eye",
+                "rank": 12
+            },
+            {
+                "fighter": "Julianna Pe\u00f1a",
+                "rank": 13
+            },
+            {
+                "fighter": "Nina Ansaroff",
+                "rank": 14
             },
             {
                 "fighter": "Claudia Gadelha",
                 "rank": 15
             }
-        ],
+        ]
+    },
+    "2020-03-09": {
         "Flyweight": [
             {
                 "fighter": "NA",
@@ -160585,16 +160473,10 @@
                 "fighter": "Amanda Nunes",
                 "rank": 0
             }
-        ]
-    },
-    "2020-03-16": {
-        "Pound-for-Pound": [
+        ],
+        "Men's Pound-for-Pound": [
             {
                 "fighter": "Jon Jones",
-                "rank": 1
-            },
-            {
-                "fighter": "Amanda Nunes",
                 "rank": 1
             },
             {
@@ -160602,15 +160484,7 @@
                 "rank": 2
             },
             {
-                "fighter": "Weili Zhang",
-                "rank": 2
-            },
-            {
                 "fighter": "Henry Cejudo",
-                "rank": 3
-            },
-            {
-                "fighter": "Valentina Shevchenko",
                 "rank": 3
             },
             {
@@ -160618,15 +160492,7 @@
                 "rank": 4
             },
             {
-                "fighter": "Jessica Andrade",
-                "rank": 4
-            },
-            {
                 "fighter": "Israel Adesanya",
-                "rank": 5
-            },
-            {
-                "fighter": "Joanna Jedrzejczyk",
                 "rank": 5
             },
             {
@@ -160634,15 +160500,7 @@
                 "rank": 6
             },
             {
-                "fighter": "Rose Namajunas",
-                "rank": 6
-            },
-            {
                 "fighter": "Kamaru Usman",
-                "rank": 7
-            },
-            {
-                "fighter": "Tatiana Suarez",
                 "rank": 7
             },
             {
@@ -160650,15 +160508,7 @@
                 "rank": 8
             },
             {
-                "fighter": "Holly Holm",
-                "rank": 8
-            },
-            {
                 "fighter": "Conor McGregor",
-                "rank": 9
-            },
-            {
-                "fighter": "Germaine de Randamie",
                 "rank": 9
             },
             {
@@ -160666,15 +160516,7 @@
                 "rank": 10
             },
             {
-                "fighter": "Aspen Ladd",
-                "rank": 10
-            },
-            {
                 "fighter": "Max Holloway",
-                "rank": 11
-            },
-            {
-                "fighter": "Katlyn Chookagian",
                 "rank": 11
             },
             {
@@ -160682,15 +160524,7 @@
                 "rank": 12
             },
             {
-                "fighter": "Jessica Eye",
-                "rank": 12
-            },
-            {
                 "fighter": "Tyron Woodley",
-                "rank": 13
-            },
-            {
-                "fighter": "Julianna Pe\u00f1a",
                 "rank": 13
             },
             {
@@ -160698,18 +160532,74 @@
                 "rank": 14
             },
             {
-                "fighter": "Nina Ansaroff",
-                "rank": 14
-            },
-            {
                 "fighter": "Dominick Reyes",
                 "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 2
+            },
+            {
+                "fighter": "Valentina Shevchenko",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 5
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 6
+            },
+            {
+                "fighter": "Tatiana Suarez",
+                "rank": 7
+            },
+            {
+                "fighter": "Holly Holm",
+                "rank": 8
+            },
+            {
+                "fighter": "Germaine de Randamie",
+                "rank": 9
+            },
+            {
+                "fighter": "Aspen Ladd",
+                "rank": 10
+            },
+            {
+                "fighter": "Katlyn Chookagian",
+                "rank": 11
+            },
+            {
+                "fighter": "Jessica Eye",
+                "rank": 12
+            },
+            {
+                "fighter": "Julianna Pe\u00f1a",
+                "rank": 13
+            },
+            {
+                "fighter": "Nina Ansaroff",
+                "rank": 14
             },
             {
                 "fighter": "Claudia Gadelha",
                 "rank": 15
             }
-        ],
+        ]
+    },
+    "2020-03-16": {
         "Flyweight": [
             {
                 "fighter": "NA",
@@ -161440,6 +161330,130 @@
             {
                 "fighter": "Amanda Nunes",
                 "rank": 0
+            }
+        ],
+        "Men's Pound-for-Pound": [
+            {
+                "fighter": "Jon Jones",
+                "rank": 1
+            },
+            {
+                "fighter": "Khabib Nurmagomedov",
+                "rank": 2
+            },
+            {
+                "fighter": "Henry Cejudo",
+                "rank": 3
+            },
+            {
+                "fighter": "Stipe Miocic",
+                "rank": 4
+            },
+            {
+                "fighter": "Israel Adesanya",
+                "rank": 5
+            },
+            {
+                "fighter": "Daniel Cormier",
+                "rank": 6
+            },
+            {
+                "fighter": "Kamaru Usman",
+                "rank": 7
+            },
+            {
+                "fighter": "Alexander Volkanovski",
+                "rank": 8
+            },
+            {
+                "fighter": "Conor McGregor",
+                "rank": 9
+            },
+            {
+                "fighter": "Tony Ferguson",
+                "rank": 10
+            },
+            {
+                "fighter": "Max Holloway",
+                "rank": 11
+            },
+            {
+                "fighter": "Dustin Poirier",
+                "rank": 12
+            },
+            {
+                "fighter": "Tyron Woodley",
+                "rank": 13
+            },
+            {
+                "fighter": "Robert Whittaker",
+                "rank": 14
+            },
+            {
+                "fighter": "Dominick Reyes",
+                "rank": 15
+            }
+        ],
+        "Women's Pound-for-Pound": [
+            {
+                "fighter": "Amanda Nunes",
+                "rank": 1
+            },
+            {
+                "fighter": "Weili Zhang",
+                "rank": 2
+            },
+            {
+                "fighter": "Valentina Shevchenko",
+                "rank": 3
+            },
+            {
+                "fighter": "Jessica Andrade",
+                "rank": 4
+            },
+            {
+                "fighter": "Joanna Jedrzejczyk",
+                "rank": 5
+            },
+            {
+                "fighter": "Rose Namajunas",
+                "rank": 6
+            },
+            {
+                "fighter": "Tatiana Suarez",
+                "rank": 7
+            },
+            {
+                "fighter": "Holly Holm",
+                "rank": 8
+            },
+            {
+                "fighter": "Germaine de Randamie",
+                "rank": 9
+            },
+            {
+                "fighter": "Aspen Ladd",
+                "rank": 10
+            },
+            {
+                "fighter": "Katlyn Chookagian",
+                "rank": 11
+            },
+            {
+                "fighter": "Jessica Eye",
+                "rank": 12
+            },
+            {
+                "fighter": "Julianna Pe\u00f1a",
+                "rank": 13
+            },
+            {
+                "fighter": "Nina Ansaroff",
+                "rank": 14
+            },
+            {
+                "fighter": "Claudia Gadelha",
+                "rank": 15
             }
         ]
     }
