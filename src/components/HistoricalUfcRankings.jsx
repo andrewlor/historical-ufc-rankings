@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Timeline from "./timeline/Timeline";
 import Rankings from "./rankings/Rankings";
+import Info from "./info/Info";
 
 class HistoricalUfcRankings extends React.Component {
     constructor(props) {
@@ -19,12 +20,12 @@ class HistoricalUfcRankings extends React.Component {
         const maxIdx = Object.keys(this.props.rankings_history).length - 1;
 
         switch (event.keyCode) {
-            case 87: // W
+            case 37: // W
                 this.setState((state) => ({
                     index: Math.min(state.index + 1, maxIdx),
                 }));
                 break;
-            case 83: // S
+            case 39: // S
                 this.setState((state) => ({
                     index: Math.max(state.index - 1, 0),
                 }));
@@ -48,6 +49,7 @@ class HistoricalUfcRankings extends React.Component {
                     }}
                 />
                 <Rankings date={date} divisions={rankings_history[date]} />
+                <Info />
             </>
         );
     };

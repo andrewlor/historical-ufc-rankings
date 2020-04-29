@@ -57,23 +57,26 @@ class Timeline extends React.Component {
     updateHoverDateLabel = (yPosition) => {
         const index = this.calculateIndex(yPosition);
 
-        this.hoverDateContainerRef.current.style.top = `${this.getRelativePositionPercentage(
+        this.hoverDateContainerRef.current.style.top = `calc(${this.getRelativePositionPercentage(
             index
-        )}%`;
+        )}% - 12px)`;
 
         this.setState({ hoverDateLabelIndex: index });
     };
 
     calculateIndex = (yPosition) => {
         const length = this.props.dates.length - 1;
-        const relativeYPositionPercentage = 1 - yPosition / this.timelimeRef.current.clientHeight;
+        const relativeYPositionPercentage =
+            1 - (yPosition - 12) / this.timelimeRef.current.clientHeight;
 
-        return Math.round(relativeYPositionPercentage * length);
+        return Math.min(Math.max(Math.round(relativeYPositionPercentage * length), 0), length);
     };
 
     updateDateLabelPosition = () => {
         const { index } = this.props;
-        this.dateContainerRef.current.style.top = `${this.getRelativePositionPercentage(index)}%`;
+        this.dateContainerRef.current.style.top = `calc(${this.getRelativePositionPercentage(
+            index
+        )}% - 12px)`;
     };
 
     getRelativePositionPercentage = (index) => {
