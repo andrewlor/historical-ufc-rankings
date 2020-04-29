@@ -17,6 +17,12 @@ import json
 #   ...       
 # }
 
+# Also pulls all divison names in rankings_history.csv and outputs it in all_divisions.json
+# [
+#    "Flyweight",
+#    ...
+# ]
+
 # Read in file contents and chop first and last line
 file = open("rankings_history.csv", "r")
 file_contents = file.read()
@@ -27,8 +33,11 @@ print("Read in {} lines from rankings_history.csv".format(len(lines)))
 
 # Parse lines and put into structed dict
 rankings_history = {}
+all_divisions = set(())
 for line in lines:
     date,weight_class,fighter,rank = line.split(",")
+
+    all_divisions.add(weight_class)
 
     if not date in rankings_history.keys(): rankings_history[date] = {}
 
@@ -53,6 +62,9 @@ for date in rankings_history:
             mens_weight_class = f"Men's {weight_class}"
             womens_weight_class = f"Women's {weight_class}"
 
+            all_divisions.add(mens_weight_class)
+            all_divisions.add(womens_weight_class)
+
             rankings_history[date][mens_weight_class] = []
             rankings_history[date][womens_weight_class] = []
 
@@ -70,3 +82,12 @@ s = json.dumps(rankings_history, indent=4)
 file.write(s)
 
 print("Output to rankings_history.json")
+
+all_divisions = list(all_divisions)
+all_divisions.sort()
+# Output list as json into file
+file = open("all_divisions.json", "w")
+s = json.dumps(all_divisions, indent=4)
+file.write(s)
+
+print("Output to all_divisions.json")

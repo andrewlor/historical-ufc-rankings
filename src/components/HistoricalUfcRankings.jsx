@@ -3,12 +3,17 @@ import PropTypes from "prop-types";
 import Timeline from "./timeline/Timeline";
 import Rankings from "./rankings/Rankings";
 import Info from "./info/Info";
+import Settings from "./settings/Settings";
 
 class HistoricalUfcRankings extends React.Component {
     constructor(props) {
         super(props);
+
+        const { all_divisions } = props;
+
         this.state = {
             index: Object.keys(props.rankings_history).length - 1,
+            selectedDivisions: all_divisions,
         };
     }
 
@@ -34,8 +39,8 @@ class HistoricalUfcRankings extends React.Component {
     };
 
     render = () => {
-        const { rankings_history } = this.props;
-        const { index } = this.state;
+        const { rankings_history, all_divisions } = this.props;
+        const { index, selectedDivisions } = this.state;
         const dates = Object.keys(rankings_history);
         const date = Object.keys(rankings_history)[index];
 
@@ -48,8 +53,19 @@ class HistoricalUfcRankings extends React.Component {
                         this.setState({ index: index });
                     }}
                 />
-                <Rankings date={date} divisions={rankings_history[date]} />
+                <Rankings
+                    date={date}
+                    divisions={rankings_history[date]}
+                    selectedDivisions={selectedDivisions}
+                />
                 <Info />
+                <Settings
+                    selectableDivisions={all_divisions}
+                    selectedDivisions={selectedDivisions}
+                    setSelectedDivisions={(divisions) =>
+                        this.setState({ selectedDivisions: divisions })
+                    }
+                />
             </>
         );
     };
@@ -57,6 +73,7 @@ class HistoricalUfcRankings extends React.Component {
 
 HistoricalUfcRankings.propTypes = {
     rankings_history: PropTypes.object.isRequired,
+    all_divisions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default HistoricalUfcRankings;

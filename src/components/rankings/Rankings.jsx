@@ -4,13 +4,15 @@ import Division from "../division/Division";
 import "./Rankings.sass";
 import { formatDate } from "../../utils";
 
-const Rankings = React.memo(({ divisions, date }) => (
+const Rankings = React.memo(({ divisions, date, selectedDivisions }) => (
     <>
-        <h1 className="date">Historical UFC Rankings: {formatDate(date)}</h1>
+        <h1 className="date">UFC Athlete Rankings: {formatDate(date)}</h1>
         <div className="rankings">
-            {Object.keys(divisions).map((division) => (
-                <Division key={division} title={division} rankings={divisions[division]} />
-            ))}
+            {Object.keys(divisions).map((division) =>
+                selectedDivisions.includes(division) ? (
+                    <Division key={division} title={division} rankings={divisions[division]} />
+                ) : null
+            )}
         </div>
     </>
 ));
@@ -18,6 +20,7 @@ const Rankings = React.memo(({ divisions, date }) => (
 Rankings.propTypes = {
     date: PropTypes.string.isRequired,
     divisions: PropTypes.object.isRequired,
+    selectedDivisions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Rankings;

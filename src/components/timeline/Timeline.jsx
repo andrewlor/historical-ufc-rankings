@@ -17,6 +17,8 @@ class Timeline extends React.Component {
         this.timelimeRef = React.createRef();
     }
 
+    componentDidMount = () => this.updateDateLabelPosition();
+
     componentDidUpdate = (prevProps) => {
         if (prevProps.index != this.props.index) {
             this.updateDateLabelPosition();
