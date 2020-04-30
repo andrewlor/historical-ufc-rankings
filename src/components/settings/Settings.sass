@@ -5,6 +5,7 @@
     margin: 10px
     height: 30px
     display: flex
+    cursor: pointer
 
     p
         margin: 0
@@ -29,15 +30,19 @@
         justify-content: flex-end
 
         p
-            margin: 5px
+            margin: 7px
 
         .check-box
             height: 20px
             width: 20px
-            border: 2px solid black
+            outline: 2px solid black
             align-self: center
+            cursor: pointer
 
             &.checked
+                border: 2px solid white
+                height: 16px
+                width: 16px
                 background-color: black
 
         .check-box:hover

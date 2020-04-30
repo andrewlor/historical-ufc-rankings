@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Settings.sass";
+import GearImage from "../../../public/gear.png";
 
 const Settings = React.memo(({ selectableDivisions, selectedDivisions, setSelectedDivisions }) => {
     const [showBox, setShowBox] = useState(false);
@@ -15,9 +16,7 @@ const Settings = React.memo(({ selectableDivisions, selectedDivisions, setSelect
 
     return (
         <>
-            <div className="settings-icon" onClick={() => setShowBox(!showBox)}>
-                <p>Settings</p>
-            </div>
+            <img className="settings-icon" onClick={() => setShowBox(!showBox)} src={GearImage} />
             {showBox ? (
                 <div className="settings-box">
                     {selectableDivisions.map((division) => (

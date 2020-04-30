@@ -16,6 +16,12 @@ module.exports = {
                 test: /\.sass$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
+            {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: "url-loader",
+                },
+            },
         ],
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
@@ -27,7 +33,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, "public/"),
         port: 3000,
-        publicPath: "http://localhost:3000/dist/",
+        publicPath: "http://localhost:3000/",
         hotOnly: true,
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
