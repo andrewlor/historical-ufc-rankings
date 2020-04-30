@@ -12,12 +12,17 @@
         margin: 0
 
     .rank
-        display: block
+        display: flex
         margin: 10px
+        align-items: center
+
+        a:hover
+            opacity: 75%
 
         &.champ
             text-align: center
             text-transform: uppercase
+            flex-direction: column
 
             a
                 font-weight: 500
@@ -26,12 +31,37 @@
                 margin: 0
                 font-size: 12px
 
+        &.selected
+            background-color: red
+            color: white
+            padding: 5px
+
+            a
+                color: white
+
+            img
+                filter: invert(1)
+
         .bold
             font-weight: 500
+            margin-right: 5px
 
         a
             text-decoration: none
             color: black
+            flex: 1
+
+        .pin
+            visibility: hidden
+            height: 20px
+
+        .pin:hover
+            opacity: 75%
+            cursor: pointer
+
+    .rank:hover
+        .pin
+            visibility: visible
 
 .division::-webkit-scrollbar
     display: none
