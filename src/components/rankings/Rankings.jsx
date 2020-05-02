@@ -9,7 +9,7 @@ const Rankings = React.memo(({ divisions, date, selectedDivisions }) => {
 
     return (
         <>
-            <h1 className="date">UFC Athlete Rankings: {formatDate(date)}</h1>
+            <h1 className="date">{formatDate(date)}</h1>
             <div className="rankings">
                 {Object.keys(divisions).map((division) =>
                     selectedDivisions.includes(division) ? (

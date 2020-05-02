@@ -14,6 +14,7 @@ class HistoricalUfcRankings extends React.Component {
         this.state = {
             index: Object.keys(props.rankings_history).length - 1,
             selectedDivisions: all_divisions,
+            animationIntervalId: -1,
         };
     }
 
@@ -21,20 +22,41 @@ class HistoricalUfcRankings extends React.Component {
         window.addEventListener("keydown", this.handleKeyDown);
     };
 
+    toggleAnimation = () => {
+        const { animationIntervalId } = this.state;
+        if (animationIntervalId > -1) {
+            clearInterval(animationIntervalId);
+            this.setState({ animationIntervalId: -1 });
+        } else {
+            const intervalId = setInterval(
+                () =>
+                    this.setState(({ index }) => {
+                        const maxIdx = Object.keys(this.props.rankings_history).length - 1;
+
+                        return { index: Math.min(index + 1, maxIdx) };
+                    }),
+                500
+            );
+            this.setState({ animationIntervalId: intervalId });
+        }
+    };
+
     handleKeyDown = (event) => {
         const maxIdx = Object.keys(this.props.rankings_history).length - 1;
 
         switch (event.keyCode) {
-            case 37: // W
+            case 37: // Left arrow
                 this.setState((state) => ({
                     index: Math.min(state.index + 1, maxIdx),
                 }));
                 break;
-            case 39: // S
+            case 39: // Right arrow
                 this.setState((state) => ({
                     index: Math.max(state.index - 1, 0),
                 }));
                 break;
+            case 80: // P
+                this.toggleAnimation();
         }
     };
 
