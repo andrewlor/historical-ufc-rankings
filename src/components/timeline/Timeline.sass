@@ -1,35 +1,28 @@
+$indicator-height: 24px
+$indicator-width: 5px
+
 .timeline
     position: fixed
     left: 0
-    top: 12px
-    height: calc(100vh - 24px)
-    border-left: 5px solid black
+    top: calc(#{$indicator-height} / 2)
+    height: calc(100vh - #{$indicator-height})
+    border-left: $indicator-width solid black
+    min-width: 10vw
+
+    .indicator
+        position: relative
+        transform: translate(-$indicator-width, 0)
+        height: $indicator-height
+        width: $indicator-width
+        background-color: red
 
     .dateLabel
         position: relative
-        top: 0%
-        border-left: 5px solid red
         padding-left: 10px
-        transform: translate(-5px, 0)
+        transform: translate(0, -$indicator-height)
 
         p
             margin: 0
-            user-select: none
             position: relative
             left: 0%
             transition: left 0.25s
-            color: red
-
-        p:hover
-            cursor: mouse
-
-        &.hover
-            transform: translate(-5px, -100%)
-            border-left: 5px solid transparent
-
-            p
-                color: black
-                opacity: 75%
-
-.timeline:hover
-    //background-color: grey

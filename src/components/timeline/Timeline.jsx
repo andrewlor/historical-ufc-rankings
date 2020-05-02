@@ -11,17 +11,17 @@ class Timeline extends React.Component {
 
     constructor(props) {
         super(props);
-        this.hoverDateLabelRef = React.createRef();
-        this.dateContainerRef = React.createRef();
-        this.hoverDateContainerRef = React.createRef();
+        this.dateLabelRef = React.createRef();
+        this.indicatorRef = React.createRef();
+        this.dateLabelContainerRef = React.createRef();
         this.timelimeRef = React.createRef();
     }
 
-    componentDidMount = () => this.updateDateLabelPosition();
+    componentDidMount = () => this.updateIndicatorPosition();
 
     componentDidUpdate = (prevProps) => {
         if (prevProps.index != this.props.index) {
-            this.updateDateLabelPosition();
+            this.updateIndicatorPosition();
         }
     };
 
@@ -32,40 +32,41 @@ class Timeline extends React.Component {
 
     handleMouseLeave = () => {
         this.setMouseDownFalse();
-        this.hideHoverDateLabel();
+        this.hideDateLabel();
     };
 
     handleMouseMove = ({ clientY }) => {
         if (this.state.mousedown) this.updateDateLabelIndex(clientY);
-        this.updateHoverDateLabel(clientY);
+        this.updateDateLabelPosition(clientY);
     };
 
     setMouseDownFalse = () => this.setState({ mousedown: false });
 
     updateDateLabelIndex = (yPosition) => this.props.updateIndex(this.calculateIndex(yPosition));
 
-    hideHoverDateLabel = () => (this.hoverDateLabelRef.current.style.left = "-200%");
+    hideDateLabel = () => (this.dateLabelRef.current.style.left = "-200%");
 
-    showHoverDateLabel = () => (this.hoverDateLabelRef.current.style.left = "0%");
+    showDateLabel = () => (this.dateLabelRef.current.style.left = "0%");
 
-    updateHoverDateLabel = (yPosition) => {
+    updateDateLabelPosition = (yPosition) => {
         const index = this.calculateIndex(yPosition);
-        const nodeStyle = this.hoverDateContainerRef.current.style;
+        const nodeStyle = this.dateLabelContainerRef.current.style;
 
         const topPercentage = this.getRelativePositionPercentage(index);
-        const offset = this.hoverDateContainerRef.current.clientHeight / 2;
+        const offset = this.dateLabelContainerRef.current.clientHeight / 2;
+        console.log(offset);
 
         nodeStyle.top = `calc(${topPercentage}% - ${offset}px)`;
 
         this.setState({ hoverDateLabelIndex: index });
     };
 
-    updateDateLabelPosition = () => {
+    updateIndicatorPosition = () => {
         const { index } = this.props;
-        const nodeStyle = this.dateContainerRef.current.style;
+        const nodeStyle = this.indicatorRef.current.style;
 
         const topPercentage = this.getRelativePositionPercentage(index);
-        const offset = this.dateContainerRef.current.clientHeight / 2;
+        const offset = this.indicatorRef.current.clientHeight / 2;
 
         nodeStyle.top = `calc(${topPercentage}% - ${offset}px)`;
     };
@@ -94,14 +95,12 @@ class Timeline extends React.Component {
                 onMouseDown={this.handleMouseDown}
                 onMouseUp={this.setMouseDownFalse}
                 onMouseLeave={this.handleMouseLeave}
-                onMouseEnter={this.showHoverDateLabel}
+                onMouseEnter={this.showDateLabel}
                 onMouseMove={this.handleMouseMove}
             >
-                <div ref={this.dateContainerRef} className="dateLabel">
-                    <p>{formatDate(dates[index])}</p>
-                </div>
-                <div ref={this.hoverDateContainerRef} className="dateLabel hover">
-                    <p ref={this.hoverDateLabelRef}>
+                <div ref={this.indicatorRef} className="indicator" />
+                <div ref={this.dateLabelContainerRef} className="dateLabel">
+                    <p ref={this.dateLabelRef}>
                         {hoverDateLabelIndex >= 0 ? formatDate(dates[hoverDateLabelIndex]) : null}
                     </p>
                 </div>
