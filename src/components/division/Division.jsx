@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Division.sass";
 import PinImage from "../../../public/pin.png";
+import { DivisionType } from "../../types/rankings-history";
 const athleteUrl = (fighter) => {
     const fighterNameUrl = fighter.toLowerCase().replace(" ", "-");
     return `https://www.ufc.com/athlete/${fighterNameUrl}`;
@@ -43,7 +44,7 @@ const Division = React.memo(({ title, rankings, selectedFighters, setSelectedFig
 
 Division.propTypes = {
     title: PropTypes.string.isRequired,
-    rankings: PropTypes.arrayOf(PropTypes.object).isRequired,
+    rankings: DivisionType.isRequired,
     selectedFighters: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelectedFighters: PropTypes.func.isRequired,
 };

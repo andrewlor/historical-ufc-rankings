@@ -4,6 +4,7 @@ import Timeline from "./timeline/Timeline";
 import Rankings from "./rankings/Rankings";
 import Info from "./info/Info";
 import Settings from "./settings/Settings";
+import { RankingsHistoryType } from "../types/rankings-history";
 
 class HistoricalUfcRankings extends React.Component {
     constructor(props) {
@@ -94,7 +95,7 @@ class HistoricalUfcRankings extends React.Component {
 }
 
 HistoricalUfcRankings.propTypes = {
-    rankings_history: PropTypes.object.isRequired,
+    rankings_history: RankingsHistoryType.isRequired,
     all_divisions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

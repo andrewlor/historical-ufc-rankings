@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Division from "../division/Division";
 import "./Rankings.sass";
 import { formatDate } from "../../utils";
+import { DivisionsType } from "../../types/rankings-history";
 
 const Rankings = React.memo(({ divisions, date, selectedDivisions }) => {
     const [selectedFighters, setSelectedFighters] = useState([]);
@@ -29,7 +30,7 @@ const Rankings = React.memo(({ divisions, date, selectedDivisions }) => {
 
 Rankings.propTypes = {
     date: PropTypes.string.isRequired,
-    divisions: PropTypes.object.isRequired,
+    divisions: DivisionsType.isRequired,
     selectedDivisions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
