@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HistoricalUfcRankings from "./components/HistoricalUfcRankings";
-import rankings_history from "../data/rankings_history.json";
-import all_divisions from "../data/all_divisions.json";
 import "./index.sass";
+import SplashScreen from "./components/splash-screen/SplashScreen";
 
 ReactDOM.render(
-    <HistoricalUfcRankings rankings_history={rankings_history} all_divisions={all_divisions} />,
+    <SplashScreen
+        propNameToUrlMap={{
+            rankings_history:
+                "https://historical-ufc-rankings.s3-us-west-2.amazonaws.com/data/rankings_history.json",
+            all_divisions:
+                "https://historical-ufc-rankings.s3-us-west-2.amazonaws.com/data/all_divisions.json",
+        }}
+    />,
     document.getElementById("root")
 );
