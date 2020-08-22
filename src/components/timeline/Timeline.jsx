@@ -54,7 +54,6 @@ class Timeline extends React.Component {
 
         const topPercentage = this.getRelativePositionPercentage(index);
         const offset = this.dateLabelContainerRef.current.clientHeight / 2;
-        console.log(offset);
 
         nodeStyle.top = `calc(${topPercentage}% - ${offset}px)`;
 
