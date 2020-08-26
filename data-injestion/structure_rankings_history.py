@@ -1,6 +1,6 @@
 import json
 
-# Take the data in rankings_history.csv, structure it, and output into JS object literal module in rankings_history.js
+# Take data from a csv, structure it, and output into a JSON file
 # Input CSV Schema: date, weightclass, fighter, rank
 # Output JSON Schema:
 # {
@@ -17,7 +17,7 @@ import json
 #   ...
 # }
 
-# Also pulls all divison names in rankings_history.csv and outputs it in all_divisions.json
+# Also pulls all divison names in the csv and outputs it as JSON
 # [
 #    "Flyweight",
 #    ...
@@ -37,6 +37,7 @@ all_divisions = set(())
 for line in lines:
     date, weight_class, fighter, rank = line.split(",")
     weight_class = weight_class.upper()
+    fighter = fighter.upper()
 
     all_divisions.add(weight_class)
 
