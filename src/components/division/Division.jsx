@@ -1,23 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Division.sass";
-import PinImage from "../../../public/pin.png";
+import PinImage from "../../../public/assets/img/pin.png";
 import { DivisionType } from "../../types/rankings-history";
 const athleteUrl = (fighter) => {
     const fighterNameUrl = fighter.toLowerCase().replace(" ", "-");
     return `https://www.ufc.com/athlete/${fighterNameUrl}`;
 };
 
-const isChamp = (rank) => rank == 0;
-
 const Division = React.memo(({ title, rankings, selectedFighters, setSelectedFighters }) => {
     const isSelected = (fighter) => selectedFighters.includes(fighter);
+
+    const isPoundForPound = !rankings.map(({ rank }) => rank).includes(0);
+
+    const isChamp = (rank) => rank == 0 || (rank == 1 && isPoundForPound);
+
     const handlePinClick = (fighter) => () => {
         const newSelectedFighters = isSelected(fighter)
             ? selectedFighters.filter((d) => d !== fighter)
             : selectedFighters.concat(fighter);
         setSelectedFighters(newSelectedFighters);
     };
+
     const buildClassNames = (rank, fighter) => {
         return `rank\
             ${isChamp(rank) ? "champ" : ""}\
@@ -29,12 +33,12 @@ const Division = React.memo(({ title, rankings, selectedFighters, setSelectedFig
         <div className="division">
             <p className="title">{title}</p>
             {rankings.map(({ rank, fighter }) => (
-                <div className={buildClassNames(rank, fighter)} key={fighter}>
+                <div className={buildClassNames(rank, fighter)} key={`${rank}-${fighter}`}>
                     {!isChamp(rank) ? <span className="bold">{rank} </span> : null}
                     <a href={athleteUrl(fighter)} target="_blank">
                         {fighter}
                     </a>
-                    {isChamp(rank) ? <p>Champion</p> : null}
+                    {isChamp(rank) ? <p>{isPoundForPound ? "Top Rank" : "Champion"}</p> : null}
                     <img className="pin" src={PinImage} onClick={handlePinClick(fighter)} />
                 </div>
             ))}

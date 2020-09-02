@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Settings.sass";
-import GearImage from "../../../public/gear.png";
+import GearImage from "../../../public/assets/img/gear.png";
 
 const Settings = React.memo(({ selectableDivisions, selectedDivisions, setSelectedDivisions }) => {
     const [showBox, setShowBox] = useState(false);

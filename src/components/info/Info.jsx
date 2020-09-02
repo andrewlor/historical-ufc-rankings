@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Info.sass";
-import CloseImage from "../../../public/close.png";
+import CloseImage from "../../../public/assets/img/close.png";
 
 const Info = React.memo(() => {
     const [showInfo, setShowInfo] = useState(false);

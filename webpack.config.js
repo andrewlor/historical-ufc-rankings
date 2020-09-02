@@ -22,6 +22,12 @@ module.exports = {
                     loader: "url-loader",
                 },
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: {
+                    loader: "url-loader",
+                },
+            },
         ],
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
