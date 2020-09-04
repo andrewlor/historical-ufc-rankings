@@ -7,7 +7,7 @@ const Info = React.memo(() => {
 
     return (
         <>
-            <div className="info-icon" onClick={() => setShowInfo(!showInfo)}>
+            <div className="info-icon clickable" onClick={() => setShowInfo(!showInfo)}>
                 <p>?</p>
             </div>
             {showInfo ? (
@@ -30,7 +30,7 @@ const Info = React.memo(() => {
                         </ul>
                         <p className="icon-source">Icons source: https://icons8.com</p>
                         <img
-                            className="exit"
+                            className="exit clickable"
                             src={CloseImage}
                             alt="Close"
                             onClick={() => setShowInfo(!showInfo)}

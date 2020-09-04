@@ -5,28 +5,48 @@
     margin: 10px
     height: 30px
     display: flex
-    cursor: pointer
 
     p
         margin: 0
         font-size: 20px
 
-    p:hover
-        cursor: mouse
-
 .settings-icon:hover
     opacity: 75%
 
-.settings-box
+.settings-backdrop
     position: fixed
-    bottom: 50px
-    right: 10px
-    margin: 0
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    opacity: 75%
+    background-color: black
+    z-index: 100
+
+.settings-box
+    z-index: 101
+    position: fixed
+    left: 50vw
+    top: 50vh
+    padding: 20px
+    width: calc(90vw - 40px)
+    transform: translate(-50%, -50%)
+    opacity: 100%
     background-color: white
+    border-radius: 20px
+    max-width: 500px
+
+    .exit
+        position: absolute
+        top: 10px
+        right: 10px
+        margin: 0
+        width: 30px
+        height: 30px
 
     .selection
         display: flex
-        justify-content: flex-end
+        justify-content: flex-start
 
         p
             margin: 7px
@@ -36,13 +56,9 @@
             width: 20px
             outline: 2px solid black
             align-self: center
-            cursor: pointer
 
             &.checked
                 border: 2px solid white
                 height: 16px
                 width: 16px
                 background-color: black
-
-        .check-box:hover
-            opacity: 75%

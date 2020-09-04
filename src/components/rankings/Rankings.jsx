@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Division from "../division/Division";
 import "./Rankings.sass";
-import { formatDate } from "../../utils";
 import { DivisionsType } from "../../types/rankings-history";
 
 const P4P = "POUND-FOR-POUND";
@@ -11,24 +10,21 @@ const Rankings = React.memo(({ divisions, date, selectedDivisions }) => {
     const [selectedFighters, setSelectedFighters] = useState([]);
 
     return (
-        <>
-            <h1 className="date">{formatDate(date)}</h1>
-            <div className="rankings">
-                {Object.keys(divisions)
-                    .sort((a, b) => (a.includes(P4P) ? -1 : b.includes(P4P) ? 1 : 0))
-                    .map((division) =>
-                        selectedDivisions.includes(division) ? (
-                            <Division
-                                key={division}
-                                title={division}
-                                rankings={divisions[division]}
-                                selectedFighters={selectedFighters}
-                                setSelectedFighters={setSelectedFighters}
-                            />
-                        ) : null
-                    )}
-            </div>
-        </>
+        <div className="divisions-container">
+            {Object.keys(divisions)
+                .sort((a, b) => (a.includes(P4P) ? -1 : b.includes(P4P) ? 1 : 0))
+                .map((division) =>
+                    selectedDivisions.includes(division) ? (
+                        <Division
+                            key={division}
+                            title={division}
+                            rankings={divisions[division]}
+                            selectedFighters={selectedFighters}
+                            setSelectedFighters={setSelectedFighters}
+                        />
+                    ) : null
+                )}
+        </div>
     );
 });
 

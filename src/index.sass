@@ -13,5 +13,26 @@
     font-weight: normal
     user-select: none
 
+html
+    height: 100vh
+    width: 100vw
+
 body
     margin: 0
+    height: inherit
+
+#root
+    height: inherit
+
+.clickable
+    cursor: pointer
+
+    &.disabled
+        cursor: default
+        opacity: 50%
+
+.clickable:hover
+    opacity: 75%
+
+.clickable.disabled:hover
+    opacity: 50%

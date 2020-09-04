@@ -4,7 +4,10 @@ import Timeline from "./timeline/Timeline";
 import Rankings from "./rankings/Rankings";
 import Info from "./info/Info";
 import Settings from "./settings/Settings";
+import ControlPanel from "./control-panel/ControlPanel";
 import { RankingsHistoryType } from "../types/rankings-history";
+import { formatDate } from "../utils";
+import "./HistoricalUfcRankings.sass";
 
 class HistoricalUfcRankings extends React.Component {
     constructor(props) {
@@ -12,11 +15,19 @@ class HistoricalUfcRankings extends React.Component {
 
         const { all_divisions } = props;
 
+        const maxIndex = Object.keys(props.rankings_history).length - 1;
+
         this.state = {
-            index: Object.keys(props.rankings_history).length - 1,
+            maxIndex: maxIndex,
+            index: maxIndex,
             selectedDivisions: all_divisions,
             animationIntervalId: -1,
         };
+
+        // Scroll control
+        // window.addEventListener("wheel", (e) =>
+        //     this.setIndex(this.state.index - Math.ceil(Math.round(e.deltaY) / 10))
+        // );
     }
 
     componentDidMount = () => {
@@ -61,6 +72,11 @@ class HistoricalUfcRankings extends React.Component {
         }
     };
 
+    setIndex = (newIndex) =>
+        this.setState({
+            index: Math.min(Math.max(newIndex, 0), this.state.maxIndex),
+        });
+
     render = () => {
         const { rankings_history, all_divisions } = this.props;
         const { index, selectedDivisions } = this.state;
@@ -68,20 +84,24 @@ class HistoricalUfcRankings extends React.Component {
         const date = Object.keys(rankings_history)[index];
 
         return (
-            <>
-                <Timeline
-                    dates={dates}
-                    index={index}
-                    updateIndex={(index) => {
-                        this.setState({ index: index });
-                    }}
-                />
-                <Rankings
-                    date={date}
-                    divisions={rankings_history[date]}
-                    selectedDivisions={selectedDivisions}
-                />
-                <Info />
+            <div className="main-view-container">
+                <p className="date">{formatDate(date)}</p>
+                <div className="rankings-container">
+                    <Rankings
+                        date={date}
+                        divisions={rankings_history[date]}
+                        selectedDivisions={selectedDivisions}
+                    />
+                </div>
+                <div className="bottom-bar">
+                    <ControlPanel
+                        index={index}
+                        setIndex={this.setIndex}
+                        maxIndex={this.state.maxIndex}
+                    />
+                </div>
+
+                {/* Absolute */}
                 <Settings
                     selectableDivisions={all_divisions}
                     selectedDivisions={selectedDivisions}
@@ -89,7 +109,8 @@ class HistoricalUfcRankings extends React.Component {
                         this.setState({ selectedDivisions: divisions })
                     }
                 />
-            </>
+                <Timeline dates={dates} index={index} />
+            </div>
         );
     };
 }
