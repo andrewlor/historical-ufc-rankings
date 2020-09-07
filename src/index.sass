@@ -36,3 +36,20 @@ body
 
 .clickable.disabled:hover
     opacity: 50%
+
+.title
+    text-transform: uppercase
+    font-weight: bold
+    text-align: center
+
+button
+    @extend .clickable
+    padding: 10px
+    margin: 10px
+    border: 2px solid black
+    text-transform: uppercase
+    font-weight: bold
+    background: white
+
+    &:focus
+        outline: none

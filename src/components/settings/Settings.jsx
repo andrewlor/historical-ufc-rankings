@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./Settings.sass";
 import GearImage from "../../../public/assets/img/gear.png";
 import CloseImage from "../../../public/assets/img/close.png";
+import CheckImage from "../../../public/assets/img/check.png";
 
 const Settings = React.memo(({ selectableDivisions, selectedDivisions, setSelectedDivisions }) => {
     const [showBox, setShowBox] = useState(false);
@@ -26,6 +27,7 @@ const Settings = React.memo(({ selectableDivisions, selectedDivisions, setSelect
                 <>
                     <div className="settings-backdrop" />
                     <div className="settings-box">
+                        <p className="title">Select Divisions</p>
                         <img
                             className="exit clickable"
                             src={CloseImage}
@@ -34,18 +36,22 @@ const Settings = React.memo(({ selectableDivisions, selectedDivisions, setSelect
                         />
                         {selectableDivisions.map((division) => (
                             <div
-                                className="selection"
+                                className="selection clickable"
                                 key={division}
                                 onClick={handleClick(division)}
                             >
-                                <div
-                                    className={`check-box clickable ${
-                                        isSelected(division) ? "checked" : ""
-                                    }`}
-                                />
+                                <div className="check-box">
+                                    {isSelected(division) ? <img src={CheckImage} /> : null}
+                                </div>
                                 <p>{division}</p>
                             </div>
                         ))}
+                        <div className="button-container">
+                            <button onClick={() => setSelectedDivisions(selectableDivisions)}>
+                                Select All
+                            </button>
+                            <button onClick={() => setSelectedDivisions([])}>Deselect All</button>
+                        </div>
                     </div>
                 </>
             ) : null}
