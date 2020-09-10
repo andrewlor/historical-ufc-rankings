@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Timeline from "./timeline/Timeline";
 import Rankings from "./rankings/Rankings";
-import Info from "./info/Info";
 import Settings from "./settings/Settings";
 import ControlPanel from "./control-panel/ControlPanel";
 import { RankingsHistoryType } from "../types/rankings-history";

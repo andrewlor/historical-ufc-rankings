@@ -5,8 +5,8 @@
     "main": "src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "webpack-dev-server --mode development",
-        "build": "webpack && cp -r public/* dist"
+        "dev": "webpack-dev-server --mode development --env.RANKINGS_HISTORY_URL=http://localhost:5000/master_rankings_history.json --env.ALL_DIVISIONS_URL=http://localhost:5000/kaggle/all_divisions.json",
+        "build": "webpack --env.RANKINGS_HISTORY_URL=https://historical-ufc-rankings.s3-us-west-2.amazonaws.com/rankings_history.json --env.ALL_DIVISIONS_URL=https://historical-ufc-rankings.s3-us-west-2.amazonaws.com/all_divisions.json && cp -r public/* dist"
     },
     "author": "",
     "license": "ISC",
