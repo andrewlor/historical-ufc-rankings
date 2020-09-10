@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./SplashScreen.sass";
 import HistoricalUfcRankings from "../HistoricalUfcRankings";
 import axios from "axios";
+import { CircularProgress } from "@material-ui/core";
 
 class SplashScreen extends React.Component {
     state = {
@@ -25,7 +26,9 @@ class SplashScreen extends React.Component {
 
     render = () =>
         !this.state.childProps ? (
-            <div className="splash-screen">Loading...</div>
+            <div className="splash-screen">
+                <CircularProgress size={100} thickness={2} />
+            </div>
         ) : (
             <HistoricalUfcRankings {...this.state.childProps} />
         );

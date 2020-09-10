@@ -8,7 +8,7 @@ import Chevron2Right from "../../../public/assets/img/chevron-2-right.png";
 
 const ControlPanel = React.memo(({ index, setIndex, maxIndex }) => {
     return (
-        <>
+        <div className="control-panel">
             <img
                 src={Chevron2Left}
                 className={`clickable ${index === maxIndex ? "disabled" : ""}`}
@@ -31,7 +31,7 @@ const ControlPanel = React.memo(({ index, setIndex, maxIndex }) => {
                 className={`clickable ${index === 0 ? "disabled" : ""}`}
                 onClick={() => setIndex(index - 10)}
             />
-        </>
+        </div>
     );
 });
 

@@ -94,21 +94,22 @@ class HistoricalUfcRankings extends React.Component {
                     />
                 </div>
                 <div className="bottom-bar">
+                    <div className="spacer" />
                     <ControlPanel
                         index={index}
                         setIndex={this.setIndex}
                         maxIndex={this.state.maxIndex}
                     />
+                    <Settings
+                        selectableDivisions={all_divisions}
+                        selectedDivisions={selectedDivisions}
+                        setSelectedDivisions={(divisions) =>
+                            this.setState({ selectedDivisions: divisions })
+                        }
+                    />
                 </div>
 
                 {/* Absolute */}
-                <Settings
-                    selectableDivisions={all_divisions}
-                    selectedDivisions={selectedDivisions}
-                    setSelectedDivisions={(divisions) =>
-                        this.setState({ selectedDivisions: divisions })
-                    }
-                />
                 <Timeline dates={dates} index={index} />
             </div>
         );
