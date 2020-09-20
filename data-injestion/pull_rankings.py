@@ -114,7 +114,8 @@ new_rankings[last_updated] = rankings
 
 # Parse CLI args
 target_dir = sys.argv[1] if len(sys.argv) == 2 else "."
-target_dir = target_dir.replace("/", "")
+if target_dir[-1] == "/":
+    target_dir = target_dir[0:-1]
 
 # Output structured dict as json into file
 file_path = f"{target_dir}/{last_updated}.json"

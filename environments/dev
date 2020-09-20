@@ -1,0 +1,2 @@
+export RANKINGS_HISTORY_URL=http://localhost:5000/master_rankings_history.json
+export ALL_DIVISIONS_URL=http://localhost:5000/kaggle/all_divisions.json
