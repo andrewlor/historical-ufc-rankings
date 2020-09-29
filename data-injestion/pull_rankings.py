@@ -41,76 +41,81 @@ def sanitize_division_name(name):
         return name
 
 
-# Set up web driver
-options = webdriver.ChromeOptions()
-options.headless = True
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+def pull_rankings():
+    # Set up web driver
+    options = webdriver.ChromeOptions()
+    options.headless = True
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-# Nagivate and wait to load
-BASE_URL = "https://www.ufc.com/rankings"
-driver.get(BASE_URL)
-WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located(
-        (By.XPATH, "//div[contains(@class, 'athlete-rankings')]"))
-)
-print("Loaded {}".format(BASE_URL))
+    # Nagivate and wait to load
+    BASE_URL = "https://www.ufc.com/rankings"
+    driver.get(BASE_URL)
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(
+            (By.XPATH, "//div[contains(@class, 'athlete-rankings')]"))
+    )
+    print("Loaded {}".format(BASE_URL))
 
-# Scroll till bottom of page
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+    # Scroll till bottom of page
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
-# Last updated
-last_updated = driver.find_element(
-    By.XPATH, "//p[contains(text(), 'Last') and contains(text(), 'updated:')]").text
-last_updated = last_updated.split('UPDATED: ')[1].split(', ')[1]
-last_updated = datetime.datetime.strptime(
-    last_updated, '%b. %d').replace(year=datetime.datetime.today().year)
-last_updated = format_date(last_updated)
-print("Last updated: {}".format(last_updated))
+    # Last updated
+    last_updated = driver.find_element(
+        By.XPATH, "//p[contains(text(), 'Last') and contains(text(), 'updated:')]").text
+    last_updated = last_updated.split('UPDATED: ')[1].split(', ')[1]
+    last_updated = datetime.datetime.strptime(
+        last_updated, '%b. %d').replace(year=datetime.datetime.today().year)
+    last_updated = format_date(last_updated)
+    print("Last updated: {}".format(last_updated))
 
-# Get division containers
-division_containers = driver.find_elements(
-    By.XPATH, "//div[@class='view-grouping']")
-print("{} division containers visible".format(len(division_containers)))
+    # Get division containers
+    division_containers = driver.find_elements(
+        By.XPATH, "//div[@class='view-grouping']")
+    print("{} division containers visible".format(len(division_containers)))
 
-# Build rankings object
-rankings = {}
-for division_container in division_containers:
-    division_name = sanitize_division_name(
-        get_element_text_by_xpath(
-            division_container, ".//div[contains(@class, 'rankings--athlete--champion')]//h4"))
+    # Build rankings object
+    rankings = {}
+    for division_container in division_containers:
+        division_name = sanitize_division_name(
+            get_element_text_by_xpath(
+                division_container, ".//div[contains(@class, 'rankings--athlete--champion')]//h4"))
 
-    champion_name = ""
-    try:
-        champion_name = get_element_text_by_xpath(
-            division_container, ".//div[contains(@class, 'rankings--athlete--champion')]//a[contains(@href, '/athlete/')]")
-    except NoSuchElementException:
-        champion_name = "NA"
-        print(f"No champ found for {division_name}")
+        champion_name = ""
+        try:
+            champion_name = get_element_text_by_xpath(
+                division_container, ".//div[contains(@class, 'rankings--athlete--champion')]//a[contains(@href, '/athlete/')]")
+        except NoSuchElementException:
+            champion_name = "NA"
+            print(f"No champ found for {division_name}")
 
-    fighters = get_elements_text_by_xpath(
-        division_container, ".//tr//a[contains(@href, '/athlete/')]")
+        fighters = get_elements_text_by_xpath(
+            division_container, ".//tr//a[contains(@href, '/athlete/')]")
 
-    print(
-        f"Building {division_name} rankings object with champion {champion_name} and {len(fighters)} fighters")
+        print(
+            f"Building {division_name} rankings object with champion {champion_name} and {len(fighters)} fighters")
 
-    rank = 1 if is_division_p4p(division_name) else 0
-    division = []
-    division.append({
-        "rank": rank,
-        "fighter": champion_name
-    })
-    for fighter in fighters:
-        rank = rank + 1
+        rank = 1 if is_division_p4p(division_name) else 0
+        division = []
         division.append({
             "rank": rank,
-            "fighter": fighter
+            "fighter": champion_name
         })
+        for fighter in fighters:
+            rank = rank + 1
+            division.append({
+                "rank": rank,
+                "fighter": fighter
+            })
 
-    rankings[division_name] = division
+        rankings[division_name] = division
+
+    new_rankings = {}
+    new_rankings[last_updated] = rankings
+
+    return new_rankings
 
 
-new_rankings = {}
-new_rankings[last_updated] = rankings
+new_rankings = pull_rankings()
 
 # Parse CLI args
 target_dir = sys.argv[1] if len(sys.argv) == 2 else "."
@@ -118,7 +123,7 @@ if target_dir[-1] == "/":
     target_dir = target_dir[0:-1]
 
 # Output structured dict as json into file
-file_path = f"{target_dir}/{last_updated}.json"
+file_path = f"{target_dir}/{list(new_rankings.keys())[0]}.json"
 file = open(file_path, "w")
 s = json.dumps(new_rankings, indent=4)
 file.write(s)

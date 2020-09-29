@@ -23,5 +23,5 @@ if (len(set(src_rankings.keys()) & set(target_rankings.keys())) > 0 and not forc
 else:
     target_rankings.update(src_rankings)
     new_target_file = open(target_file_name, "w")
-    s = json.dumps(target_rankings, indent=4)
+    s = json.dumps(target_rankings)
     new_target_file.write(s)
