@@ -25,12 +25,13 @@ pulled_file_name=${files[0]}
 if [ ! -f "$pulled_file_name" ]; then
     quit "Pull rankings failed."
 fi
+pulled_file_name=${pulled_file_name:2}
 
-if ! python3 verify_rankings.py $pulled_file_name; then
+if ! python3 verify_rankings.py ./$pulled_file_name; then
     quit "Pulled verification failed."
 fi
 
-if ! python3 append_json.py -f $pulled_file_name ./$master_file_name; then
+if ! python3 append_json.py -f ./$pulled_file_name ./$master_file_name; then
     quit "Append JSON failed."
 fi
 
@@ -42,6 +43,6 @@ if ! aws s3 cp ./$master_file_name s3://historical-ufc-rankings/$master_file_nam
     quit "Upload master rankings failed."
 fi
 
-if ! rm $pulled_file_name || ! rm ./$master_file_name; then
+if ! rm ./$pulled_file_name || ! rm ./$master_file_name; then
     quit "Clean up failed."
 fi
