@@ -8,6 +8,7 @@ import { CircularProgress } from "@material-ui/core";
 class SplashScreen extends React.Component {
     state = {
         childProps: null,
+        begin: false,
     };
 
     componentDidMount() {
@@ -24,14 +25,28 @@ class SplashScreen extends React.Component {
         });
     }
 
-    render = () =>
-        !this.state.childProps ? (
-            <div className="splash-screen">
-                <CircularProgress size={100} thickness={2} />
+    isAppVisible = () => this.state.childProps && this.state.begin;
+
+    render = () => (
+        <>
+            <div className="splash-screen" style={this.isAppVisible() ? { top: "-100%" } : {}}>
+                <h1>Historical UFC Rankings</h1>
+                <p>
+                    An interactive data explorer for the history of the UFC rankings, since their
+                    inception.
+                </p>
+                <p>Explore how UFC fighters have moved through the rankings through time.</p>
+                {!this.isAppVisible() ? (
+                    <button className="inverted" onClick={() => this.setState({ begin: true })}>
+                        Begin
+                    </button>
+                ) : (
+                    <CircularProgress thickness={2} />
+                )}
             </div>
-        ) : (
-            <HistoricalUfcRankings {...this.state.childProps} />
-        );
+            {this.isAppVisible() ? <HistoricalUfcRankings {...this.state.childProps} /> : null}
+        </>
+    );
 }
 
 SplashScreen.propTypes = {
