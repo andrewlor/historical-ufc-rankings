@@ -7,8 +7,10 @@ import Chevron2Left from "../../../public/assets/img/chevron-2-left.png";
 import Chevron2Right from "../../../public/assets/img/chevron-2-right.png";
 import Move10Left from "../../../public/assets/img/move-10-left.png";
 import Move10Right from "../../../public/assets/img/move-10-right.png";
+import Pause from "../../../public/assets/img/pause.png";
+import Play from "../../../public/assets/img/play.png";
 
-const ControlPanel = React.memo(({ index, setIndex, maxIndex }) => {
+const ControlPanel = React.memo(({ index, setIndex, maxIndex, isAnimating, toggleAnimation }) => {
     return (
         <div className="control-panel">
             <img
@@ -26,6 +28,11 @@ const ControlPanel = React.memo(({ index, setIndex, maxIndex }) => {
                 className={`clickable ${index === maxIndex ? "disabled" : ""}`}
                 onClick={() => setIndex(index + 1)}
             />
+            {isAnimating ? (
+                <img src={Pause} className="clickable" onClick={toggleAnimation} />
+            ) : (
+                <img src={Play} className="clickable" onClick={toggleAnimation} />
+            )}
             <img
                 src={ChevronRight}
                 className={`clickable ${index === 0 ? "disabled" : ""}`}
