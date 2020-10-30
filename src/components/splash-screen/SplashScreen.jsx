@@ -8,7 +8,7 @@ import { CircularProgress } from "@material-ui/core";
 class SplashScreen extends React.Component {
     state = {
         childProps: null,
-        begin: false,
+        explore: false,
     };
 
     componentDidMount() {
@@ -25,7 +25,7 @@ class SplashScreen extends React.Component {
         });
     }
 
-    isAppVisible = () => this.state.childProps && this.state.begin;
+    isAppVisible = () => this.state.childProps && this.state.explore;
 
     render = () => (
         <>
@@ -36,13 +36,18 @@ class SplashScreen extends React.Component {
                     inception.
                 </p>
                 <p>Explore how UFC fighters have moved through the rankings through time.</p>
-                {!this.isAppVisible() ? (
-                    <button className="inverted" onClick={() => this.setState({ begin: true })}>
-                        Begin
-                    </button>
-                ) : (
-                    <CircularProgress thickness={2} />
-                )}
+                <div className="explore-container">
+                    {!this.state.explore ? (
+                        <button
+                            className="inverted"
+                            onClick={() => this.setState({ explore: true })}
+                        >
+                            Explore
+                        </button>
+                    ) : (
+                        <CircularProgress thickness={2} />
+                    )}
+                </div>
             </div>
             {this.isAppVisible() ? <HistoricalUfcRankings {...this.state.childProps} /> : null}
         </>
