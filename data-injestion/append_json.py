@@ -21,7 +21,7 @@ if (len(set(src_rankings.keys()) & set(target_rankings.keys())) > 0 and not forc
     print(f"WARNING: Not appending data")
     print(f"Use -f flag to force override the data")
 else:
-    target_rankings.update(src_rankings)
+    target_rankings.update(src_rankings, sort_keys=True)
     new_target_file = open(target_file_name, "w")
     s = json.dumps(target_rankings)
     new_target_file.write(s)
