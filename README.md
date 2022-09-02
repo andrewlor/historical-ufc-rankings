@@ -1,4 +1,4 @@
-# [Historical UFC Rankings](http://app.historicalufcrankings.com)
+# [Historical UFC Rankings](http://andrewlor.me/demos/historical-ufc-rankings)
 
 An interactive data exploring application for the history of the UFC rankings, since their inception.
 
