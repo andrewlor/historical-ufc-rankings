@@ -1,2 +1,2 @@
-export RANKINGS_HISTORY_URL=https://historical-ufc-rankings.s3-us-west-2.amazonaws.com/rankings_history.json
-export ALL_DIVISIONS_URL=https://historical-ufc-rankings.s3-us-west-2.amazonaws.com/all_divisions.json
+export RANKINGS_HISTORY_URL=http://historical-ufc-rankings.s3-website-us-west-2.amazonaws.com/rankings_history.json
+export ALL_DIVISIONS_URL=http://historical-ufc-rankings.s3-website-us-west-2.amazonaws.com/all_divisions.json
