@@ -10,7 +10,7 @@ if [ ! -z "$1" ]; then
     master_file_name=$1
 fi
 
-if ! aws s3 cp s3://historical-ufc-rankings/$master_file_name ./$master_file_name ||
+if ! aws s3 cp s3://andrewlor.me/demos/historical-ufc-rankings/data/$master_file_name ./$master_file_name ||
     [ ! -f "./$master_file_name" ]; then
     quit "Download master rankings failed"
 fi
@@ -35,11 +35,11 @@ if ! python3 append_json.py -f ./$pulled_file_name ./$master_file_name; then
     quit "Append JSON failed."
 fi
 
-if ! aws s3 cp ./$pulled_file_name s3://historical-ufc-rankings/pulled/$pulled_file_name; then
+if ! aws s3 cp ./$pulled_file_name s3://andrewlor.me/demos/historical-ufc-rankings/data/pulled/$pulled_file_name; then
     quit "Upload pulled rankings failed."
 fi
 
-if ! aws s3 cp ./$master_file_name s3://historical-ufc-rankings/$master_file_name; then
+if ! aws s3 cp ./$master_file_name s3://andrewlor.me/demos/historical-ufc-rankings/data/$master_file_name; then
     quit "Upload master rankings failed."
 fi
 
