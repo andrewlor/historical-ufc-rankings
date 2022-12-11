@@ -1,0 +1,2 @@
+export RANKINGS_HISTORY_URL=http://andrew.local:5000/rankings_history.json
+export ALL_DIVISIONS_URL=http://andrew.local:5000/all_divisions.json

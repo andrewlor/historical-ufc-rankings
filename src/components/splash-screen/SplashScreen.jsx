@@ -4,6 +4,7 @@ import "./SplashScreen.sass";
 import HistoricalUfcRankings from "../HistoricalUfcRankings";
 import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
+import { CSSTransition } from "react-transition-group";
 
 class SplashScreen extends React.Component {
     state = {
@@ -29,26 +30,28 @@ class SplashScreen extends React.Component {
 
     render = () => (
         <>
-            <div className="splash-screen" style={this.isAppVisible() ? { top: "-100%" } : {}}>
-                <h1>Historical UFC Rankings</h1>
-                <p>
-                    An interactive data explorer for the history of the UFC rankings, since their
-                    inception.
-                </p>
-                <p>Explore how UFC fighters have moved through the rankings through time.</p>
-                <div className="explore-container">
-                    {!this.state.explore ? (
-                        <button
-                            className="inverted"
-                            onClick={() => this.setState({ explore: true })}
-                        >
-                            Explore
-                        </button>
-                    ) : (
-                        <CircularProgress thickness={2} />
-                    )}
+            <CSSTransition in={!this.isAppVisible()} timeout={500} classNames="top">
+                <div className="splash-screen">
+                    <h1>Historical UFC Rankings</h1>
+                    <p>
+                        An interactive data explorer for the history of the UFC rankings, since
+                        their inception.
+                    </p>
+                    <p>Explore how UFC fighters have moved through the rankings through time.</p>
+                    <div className="explore-container">
+                        {!this.state.explore ? (
+                            <button
+                                className="inverted"
+                                onClick={() => this.setState({ explore: true })}
+                            >
+                                Explore
+                            </button>
+                        ) : (
+                            <CircularProgress thickness={2} />
+                        )}
+                    </div>
                 </div>
-            </div>
+            </CSSTransition>
             {this.isAppVisible() ? <HistoricalUfcRankings {...this.state.childProps} /> : null}
         </>
     );

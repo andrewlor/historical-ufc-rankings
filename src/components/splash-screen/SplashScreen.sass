@@ -7,7 +7,6 @@
     justify-content: center
     background-color: red
     flex-direction: column
-    transition: top 0.5s ease 0.5s
     top: 0
     z-index: 100
 
@@ -21,3 +20,21 @@
         display: flex
         justify-content: center
         align-items: center
+
+.top-enter
+    top: -100vh
+
+    &-active
+        top: 0
+        transition: top 500ms
+    &-done
+        top: 0
+
+.top-exit
+    top: 0
+
+    &-active
+        top: -100vh
+        transition: top 500ms
+    &-done
+        top: -100vh
